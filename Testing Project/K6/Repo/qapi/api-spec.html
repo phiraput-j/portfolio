@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>API Specification</title>
+<style>
+body { font-family:sans-serif; max-width:900px; margin:20px auto; line-height:1.5; }
+h1,h2,h3 { margin-top:1em; }
+pre { background:#f6f6f6; padding:8px; border-radius:4px; overflow-x:auto; }
+.box { border:1px solid #ccc; padding:10px; margin-bottom:12px; border-radius:6px; }
+code { background:#eee; padding:2px 4px; border-radius:4px; }
+</style>
+</head>
+<body>
+<h1>Mock API Specification</h1>
+
+<!-- ================= User APIs ================= -->
+
+<div class="box">
+<h2>POST /register</h2>
+<p>Register a new user. Anyone can call.</p>
+<h3>Headers</h3>
+<pre>
+Content-Type: application/json
+</pre>
+<h3>Body (JSON)</h3>
+<pre>{
+  "username": "alice",
+  "password": "mypassword",
+  "role": "user"
+}</pre>
+<h3>Response</h3>
+<pre>{
+  "message": "User registered"
+}</pre>
+</div>
+
+<div class="box">
+<h2>POST /login</h2>
+<p>Login user and receive token (expires in 1 minute).</p>
+<h3>Headers</h3>
+<pre>
+Content-Type: application/json
+</pre>
+<h3>Body (JSON)</h3>
+<pre>{
+  "username": "alice",
+  "password": "mypassword"
+}</pre>
+<h3>Response</h3>
+<pre>{
+  "token": "base64-token",
+  "role": "user",
+  "expires_in": "60s"
+}</pre>
+</div>
+
+<div class="box">
+<h2>GET /users</h2>
+<p>Get list of all users (Admin only).</p>
+<h3>Headers</h3>
+<pre>
+Authorization: Bearer &lt;admin-token&gt;
+</pre>
+<h3>Body</h3>
+<p>None</p>
+<h3>Response</h3>
+<pre>[
+  {
+    "id": 1,
+    "username": "alice",
+    "password": "mypassword",
+    "role": "admin"
+  }
+]</pre>
+</div>
+
+<div class="box">
+<h2>GET /users/{id}</h2>
+<p>Get a specific user by ID (Admin only).</p>
+<h3>Headers</h3>
+<pre>
+Authorization: Bearer &lt;admin-token&gt;
+</pre>
+<h3>Body</h3>
+<p>None</p>
+<h3>Response</h3>
+<pre>{
+  "id": 1,
+  "username": "alice",
+  "password": "mypassword",
+  "role": "admin"
+}</pre>
+</div>
+
+<!-- ================= Product APIs ================= -->
+
+<div class="box">
+<h2>GET /products</h2>
+<p>Get list of all products. Any logged-in user.</p>
+<h3>Headers</h3>
+<pre>
+Authorization: Bearer &lt;token&gt;
+</pre>
+<h3>Body</h3>
+<p>None</p>
+<h3>Response</h3>
+<pre>[
+  {
+    "id": 1,
+    "title": "Laptop",
+    "price": 1200,
+    "description": "Gaming laptop"
+  }
+]</pre>
+</div>
+
+<div class="box">
+<h2>POST /products</h2>
+<p>Create a product (Admin only).</p>
+<h3>Headers</h3>
+<pre>
+Authorization: Bearer &lt;admin-token&gt;
+Content-Type: application/json
+</pre>
+<h3>Body (JSON)</h3>
+<pre>{
+  "title": "Laptop",
+  "price": 1200,
+  "description": "Gaming laptop"
+}</pre>
+<h3>Response</h3>
+<pre>{
+  "id": 1,
+  "title": "Laptop",
+  "price": 1200,
+  "description": "Gaming laptop"
+}</pre>
+</div>
+
+<div class="box">
+<h2>PUT /products/{id}</h2>
+<p>Update product (Admin only).</p>
+<h3>Headers</h3>
+<pre>
+Authorization: Bearer &lt;admin-token&gt;
+Content-Type: application/json
+</pre>
+<h3>Body (JSON)</h3>
+<pre>{
+  "title": "Laptop Pro",
+  "price": 1500,
+  "description": "Upgraded laptop"
+}</pre>
+<h3>Response</h3>
+<pre>{
+  "id": 1,
+  "title": "Laptop Pro",
+  "price": 1500,
+  "description": "Upgraded laptop"
+}</pre>
+</div>
+
+<div class="box">
+<h2>DELETE /products/{id}</h2>
+<p>Delete product (Admin only).</p>
+<h3>Headers</h3>
+<pre>
+Authorization: Bearer &lt;admin-token&gt;
+</pre>
+<h3>Body</h3>
+<p>None</p>
+<h3>Response</h3>
+<pre>{
+  "message": "Product deleted"
+}</pre>
+</div>
+
+</body>
+</html>

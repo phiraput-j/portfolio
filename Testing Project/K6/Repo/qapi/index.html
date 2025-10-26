@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mock API UI</title>
+<style>
+body { font-family:sans-serif; max-width:900px; margin:20px auto; line-height:1.5; }
+.box { border:1px solid #ccc; padding:10px; margin-bottom:12px; border-radius:6px; }
+h2,h3 { margin-top:0; }
+label { display:block; margin-top:6px; }
+input,textarea { width:100%; padding:6px; margin-top:4px; }
+button { margin-top:8px; padding:6px 10px; }
+pre { background:#f6f6f6; padding:8px; border-radius:4px; }
+.header-row { display:flex; gap:6px; margin-top:4px; }
+.header-row input { flex:1; }
+</style>
+</head>
+<body>
+<h1>Mock API UI</h1>
+
+<script>
+function addHeader(containerId){
+  const container = document.getElementById(containerId);
+  const div = document.createElement("div");
+  div.className = "header-row";
+  div.innerHTML = `<input placeholder="Header Key"><input placeholder="Header Value">`;
+  container.appendChild(div);
+}
+
+async function sendAPI(path, method, headersId, bodyId, resultId){
+  const headersDiv = document.getElementById(headersId);
+  const headerInputs = headersDiv.querySelectorAll("input");
+  const headers = {};
+  for(let i=0;i<headerInputs.length;i+=2){
+    const key = headerInputs[i].value.trim();
+    const val = headerInputs[i+1].value.trim();
+    if(key) headers[key] = val;
+  }
+
+  let body;
+  if(bodyId){
+    try { body = JSON.parse(document.getElementById(bodyId).value); }
+    catch(e){ alert("Invalid JSON in body"); return; }
+  }
+
+  const res = await fetch("http://localhost:8080"+path,{
+    method,
+    headers,
+    body: (method==="GET" || method==="DELETE") ? null : JSON.stringify(body)
+  });
+
+  let text = await res.text();
+  try { text = JSON.stringify(JSON.parse(text), null, 2) } catch {}
+  document.getElementById(resultId).textContent = `Status: ${res.status}\n${text}`;
+}
+</script>
+
+<!-- ================= User APIs ================= -->
+
+<div class="box">
+<h2>Register User</h2>
+<h3>Headers</h3>
+<div id="register_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Content-Type">
+    <input placeholder="Header Value" value="application/json">
+  </div>
+</div>
+<button onclick="addHeader('register_headers')">+ Add Header</button>
+
+<h3>Body (JSON)</h3>
+<textarea id="register_body" rows="6">
+{
+  "username": "alice",
+  "password": "mypassword",
+  "role": "admin"
+}
+</textarea>
+
+<button onclick="sendAPI('/register','POST','register_headers','register_body','register_result')">Send</button>
+<pre id="register_result"></pre>
+</div>
+
+<div class="box">
+<h2>Login User</h2>
+<h3>Headers</h3>
+<div id="login_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Content-Type">
+    <input placeholder="Header Value" value="application/json">
+  </div>
+</div>
+<button onclick="addHeader('login_headers')">+ Add Header</button>
+
+<h3>Body (JSON)</h3>
+<textarea id="login_body" rows="6">
+{
+  "username": "alice",
+  "password": "mypassword"
+}
+</textarea>
+
+<button onclick="sendAPI('/login','POST','login_headers','login_body','login_result')">Send</button>
+<pre id="login_result"></pre>
+</div>
+
+<div class="box">
+<h2>Get All Users (Admin)</h2>
+<h3>Headers</h3>
+<div id="users_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Authorization">
+    <input placeholder="Header Value" value="Bearer admin-token">
+  </div>
+</div>
+<button onclick="addHeader('users_headers')">+ Add Header</button>
+<button onclick="sendAPI('/users','GET','users_headers',null,'users_result')">Send</button>
+<pre id="users_result"></pre>
+</div>
+
+<div class="box">
+<h2>Get User by ID (Admin)</h2>
+<label>User ID<input id="user_id" value="1"></label>
+<h3>Headers</h3>
+<div id="user_id_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Authorization">
+    <input placeholder="Header Value" value="Bearer admin-token">
+  </div>
+</div>
+<button onclick="addHeader('user_id_headers')">+ Add Header</button>
+<button onclick="sendAPI('/users/'+document.getElementById('user_id').value,'GET','user_id_headers',null,'user_id_result')">Send</button>
+<pre id="user_id_result"></pre>
+</div>
+
+<!-- ================= Product APIs ================= -->
+
+<div class="box">
+<h2>Get Products</h2>
+<h3>Headers</h3>
+<div id="getprod_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Authorization">
+    <input placeholder="Header Value" value="Bearer user-token">
+  </div>
+</div>
+<button onclick="addHeader('getprod_headers')">+ Add Header</button>
+<button onclick="sendAPI('/products','GET','getprod_headers',null,'getprod_result')">Send</button>
+<pre id="getprod_result"></pre>
+</div>
+
+<div class="box">
+<h2>Create Product (Admin)</h2>
+<h3>Headers</h3>
+<div id="createprod_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Authorization">
+    <input placeholder="Header Value" value="Bearer admin-token">
+  </div>
+  <div class="header-row">
+    <input placeholder="Header Key" value="Content-Type">
+    <input placeholder="Header Value" value="application/json">
+  </div>
+</div>
+<button onclick="addHeader('createprod_headers')">+ Add Header</button>
+
+<h3>Body (JSON)</h3>
+<textarea id="createprod_body" rows="6">
+{
+  "title": "Laptop",
+  "price": 1200,
+  "description": "Gaming laptop"
+}
+</textarea>
+
+<button onclick="sendAPI('/products','POST','createprod_headers','createprod_body','createprod_result')">Send</button>
+<pre id="createprod_result"></pre>
+</div>
+
+<div class="box">
+<h2>Update Product (Admin)</h2>
+<label>Product ID<input id="updateprod_id" value="1"></label>
+<h3>Headers</h3>
+<div id="updateprod_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Authorization">
+    <input placeholder="Header Value" value="Bearer admin-token">
+  </div>
+  <div class="header-row">
+    <input placeholder="Header Key" value="Content-Type">
+    <input placeholder="Header Value" value="application/json">
+  </div>
+</div>
+<button onclick="addHeader('updateprod_headers')">+ Add Header</button>
+
+<h3>Body (JSON)</h3>
+<textarea id="updateprod_body" rows="6">
+{
+  "title": "Laptop Pro",
+  "price": 1500,
+  "description": "Upgraded laptop"
+}
+</textarea>
+
+<button onclick="sendAPI('/products/'+document.getElementById('updateprod_id').value,'PUT','updateprod_headers','updateprod_body','updateprod_result')">Send</button>
+<pre id="updateprod_result"></pre>
+</div>
+
+<div class="box">
+<h2>Delete Product (Admin)</h2>
+<label>Product ID<input id="deleteprod_id" value="1"></label>
+<h3>Headers</h3>
+<div id="deleteprod_headers">
+  <div class="header-row">
+    <input placeholder="Header Key" value="Authorization">
+    <input placeholder="Header Value" value="Bearer admin-token">
+  </div>
+</div>
+<button onclick="addHeader('deleteprod_headers')">+ Add Header</button>
+<button onclick="sendAPI('/products/'+document.getElementById('deleteprod_id').value,'DELETE','deleteprod_headers',null,'deleteprod_result')">Send</button>
+<pre id="deleteprod_result"></pre>
+</div>
+
+</body>
+</html>
