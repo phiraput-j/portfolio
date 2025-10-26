@@ -1,0 +1,203 @@
+1758874197015	geckodriver	INFO	Listening on 127.0.0.1:49925
+1758874200091	mozrunner::runner	INFO	Running command: "C:\\Users\\PongAng\\.cache\\selenium\\firefox\\win64\\143.0.1\\firefox.exe" "--marionette" "--remote-debugg ...  "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\PongAng\\AppData\\Local\\Temp\\rust_mozprofilejvrLp1"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1758874200607	Marionette	INFO	Marionette enabled
+1758874200730	Marionette	INFO	Listening on port 49933
+WebDriver BiDi listening on ws://127.0.0.1:49926
+Read port: 49933
+1758874200961	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1758874204310	Marionette	INFO	Stopped listening on port 49933
+Dynamically enable window occlusion 1
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 105: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/url-classifier-exceptions importChanges() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+importChanges@resource://services-settings/Database.sys.mjs:109:13
+remoteSettingsFunction/remoteSettings.pullStartupBundle/remoteSettings._ongoingExtractBundlePromise<@resource://services-settings/remote-settings.sys.mjs:275:25
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/mfcdm-origins-list list() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+list@resource://services-settings/Database.sys.mjs:48:13
+get@resource://services-settings/RemoteSettingsClient.sys.mjs:572:28
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/mfcdm-origins-list list() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+list@resource://services-settings/Database.sys.mjs:48:13
+get@resource://services-settings/RemoteSettingsClient.sys.mjs:572:28
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/mfcdm-origins-list list() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+list@resource://services-settings/Database.sys.mjs:48:13
+get@resource://services-settings/RemoteSettingsClient.sys.mjs:572:28
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/mfcdm-origins-list list() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+list@resource://services-settings/Database.sys.mjs:48:13
+get@resource://services-settings/RemoteSettingsClient.sys.mjs:572:28
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: services.settings: 
+  Message: Error: IndexedDB: main/nimbus-secure-experiments getLastModified() IndexedDB:  execute() The application is shutting down
+  Stack:
+    IndexedDBError@resource://services-settings/IDBHelpers.sys.mjs:14:15
+ShutdownError@resource://services-settings/IDBHelpers.sys.mjs:24:5
+executeIDB@resource://services-settings/Database.sys.mjs:512:13
+getLastModified@resource://services-settings/Database.sys.mjs:192:13
+get@resource://services-settings/RemoteSettingsClient.sys.mjs:462:59
+getRecipesFromCollection@resource://nimbus/lib/RemoteSettingsExperimentLoader.sys.mjs:536:30
+getRecipesFromAllCollections@resource://nimbus/lib/RemoteSettingsExperimentLoader.sys.mjs:487:42
+observe@resource://gre/modules/AsyncShutdown.sys.mjs:569:17
+
+console.error: (new Error("Phase \"profile-change-teardown\" is finished, it is too late to register completion condition \"ProfilesDatastoreService uninit\"", "resource://gre/modules/AsyncShutdown.sys.mjs", 718))
+console.error: NimbusMigrations: 
+  applyMigrations: error running migration 2 (import-enrollments-to-sql): TypeError: can't access property "executeTransaction", conn is null
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 102: Error: Unknown callback
